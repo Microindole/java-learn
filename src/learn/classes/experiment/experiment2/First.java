@@ -1,7 +1,5 @@
 package learn.classes.experiment.experiment2;
 
-import com.sun.source.tree.WhileLoopTree;
-
 import java.util.Scanner;
 
 public class First {

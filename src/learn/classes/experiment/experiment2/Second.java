@@ -1,28 +1,44 @@
 package learn.classes.experiment.experiment2;
 
-import java.util.Scanner;
-
 public class Second {
 
-    public static int indexofSmallestElement(double[] array){
-        double minNum = array[0];
-        int index = 0;
-        for(int i = 1; i < array.length; i++){
-            if(array[i] < minNum){
-                minNum = array[i];
-                index = i;
-            }
+    public static boolean isPrime(int num){
+        int num1 = (int) Math.sqrt(num);
+        if(num == 1)
+            return false;
+        else if(num == 2)
+            return true;
+        else{
+            for(int i = 2; i <= num1; i++){
+                if (num % i == 0)
+                    return false;
+            }return true;
         }
-        return index;
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入10个数字：");
-        double[] array = new double[10];
-        for (int i = 0; i < 10; i++) {
-            array[i] = sc.nextDouble();
+
+    public static boolean isPalindrome(int num){
+        int length = String.valueOf(num).length();
+
+        if(num < 10)
+            return true;
+        else {
+            return false;
         }
-        int note = indexofSmallestElement(array);
-        System.out.println("最小元素的下下标为 "+note+"\n"+"这个数为 "+array[note]+"\n");
+    }
+
+    public static void main(String[] args) {
+        int i = 0;
+        int num = 2;
+        int line = 0;
+        while(i < 100){
+            if(line % 10 == 0){
+                System.out.print("\n");
+            }
+            if(isPrime(num) || isPalindrome(num)){
+                System.out.print(num+"  ");
+                i++;
+                line++;
+            }num++;
+        }
     }
 }

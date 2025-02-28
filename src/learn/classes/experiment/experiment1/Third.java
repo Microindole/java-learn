@@ -1,16 +1,23 @@
 package learn.classes.experiment.experiment1;
 
-import java.util.Random;
+
 
 public class Third {
-    public static void main(String[] args) {
-        String [] daoXiao ={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
-        String [] huaSe = {"Clubs","Diamond","Heart","Spades"};
-        Random rand = new Random();
-        int num1 = rand.nextInt(daoXiao.length);
-        int num2 = rand.nextInt(huaSe.length);
-        System.out.println("提示牌的花色为:"+huaSe[num2]);
-        System.out.println("大小为:"+daoXiao[num1]);
 
+    public static boolean LeapYear(int year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+
+    public static void main(String[] args) {
+        int line = 0;
+        for (int i= 101; i < 2100; i++){
+            if (LeapYear(i)){
+                if(line % 10 == 0){
+                    System.out.println(i);
+                }else {
+                    System.out.print(i+" \t");
+                }line++;
+            }
+        }
     }
 }
