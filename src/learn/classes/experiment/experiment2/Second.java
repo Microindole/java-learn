@@ -18,26 +18,32 @@ public class Second {
 
     public static boolean isPalindrome(int num){
         int length = String.valueOf(num).length();
-
-        if(num < 10)
-            return true;
-        else {
-            return false;
+        int [] numArray = new int[length];
+        for(int i = length - 1; i >= 0; i--){
+            numArray[i] = num % 10;
+            num /= 10;
         }
+        int iEnd = length / 2;
+        for(int i = 0; i < iEnd; i++){
+            if(numArray[i] != numArray[length - i - 1])
+                return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        int i = 0;
+        int i = 1;
         int num = 2;
-        int line = 0;
-        while(i < 100){
-            if(line % 10 == 0){
-                System.out.print("\n");
-            }
-            if(isPrime(num) || isPalindrome(num)){
-                System.out.print(num+"  ");
-                i++;
-                line++;
+        while(i <= 100){
+            if(isPrime(num) && isPalindrome(num)){
+                if(i % 10 == 0){
+                    System.out.println(num);
+                }else{
+                    if (num<100)
+                        System.out.print(num+"   \t");
+                    else
+                        System.out.print(num+" \t");
+                }i++;
             }num++;
         }
     }
