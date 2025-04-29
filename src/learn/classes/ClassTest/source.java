@@ -41,11 +41,13 @@ public class source {
     public static void endWithPoint(){
         int num, sum = 0;
         Scanner sc = new Scanner(System.in);
+        System.out.println("请输入数字：");
         num = sc.nextInt();
         while(num != 0){
             sum += num;
             System.out.println("请输入数字：");
             num = sc.nextInt();
+
         }
         System.out.println("sum is "+ sum);
 
